@@ -1,0 +1,13 @@
+---
+# site.yml for controller_custom_credentials
+
+- name: Project controller_custom_credentials
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+  - name: call myuser
+    myuser:
+      name: 'bob'
+      password: 'redhat123'
+      state: present
