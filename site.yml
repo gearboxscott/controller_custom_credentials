@@ -8,24 +8,16 @@
   tasks:
   - name: Show Oops the Developer Exposed Protected Data
     user_module_wrong_way:
-      name: 'Haley The Dog'
-      password: 'redhat123'
-      private_ssh_key: |
-        -----BEGIN RSA PRIVATE KEY-----
-        some private key data here
-        -----END RSA PRIVATE KEY-----
-      public_ssh_key: |
-        ssh-rsa some publiic ssh key data here somename@somehost
+      name: '{{ custom_credential_username }}'
+      password: '{{ custom_credential_password }}'
+      private_ssh_key: '{{ custom_credential_private_ssh_key }}'
+      public_ssh_key: '{{ custom _credential_public_ssh_key }}'
       state: present
 
   - name: Show the Developer Protected Valuable Sensitive Data
     user_module_correct_way:
-      name: 'Jupitor The Cat'
-      password: 'redhat123'
-      private_ssh_key: |
-        -----BEGIN RSA PRIVATE KEY-----
-        some private key data here
-        -----END RSA PRIVATE KEY-----
-      public_ssh_key: |
-        ssh-rsa some publiic ssh key data here somename@somehost
+      name: '{{ custom_credential_username }}'
+      password: '{{ custom_credential_password }}'
+      private_ssh_key: '{{ custom_credential_private_ssh_key }}'
+      public_ssh_key: '{{ custom _credential_public_ssh_key }}'
       state: present
