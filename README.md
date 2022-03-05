@@ -1,3 +1,9 @@
+env:
+  ENV_CUSTOM_CREDENTIAL_PASSWORD: '{{ password }}'
+  ENV_CUSTOM_CREDENTIAL_USERNAME: '{{ username }}'
+  ENV_CUSTOM_CREDENTIAL_PUBLIC_SSH_KEY: '{{ public_ssh_key }}'
+  ENV_CUSTOM_CREDENTIAL_PRIVATE_SSH_KEY: '{{ private_ssh_key }}'
+  
 controller_custom_credentials Project
 =========
 

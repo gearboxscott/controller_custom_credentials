@@ -11,7 +11,7 @@
       name: '{{ custom_credential_username }}'
       password: '{{ custom_credential_password }}'
       private_ssh_key: '{{ custom_credential_private_ssh_key }}'
-      public_ssh_key: '{{ custom _credential_public_ssh_key }}'
+      public_ssh_key: '{{ custom_credential_public_ssh_key }}'
       state: present
 
   - name: Show the Developer Protected Valuable Sensitive Data
@@ -19,5 +19,5 @@
       name: '{{ custom_credential_username }}'
       password: '{{ custom_credential_password }}'
       private_ssh_key: '{{ custom_credential_private_ssh_key }}'
-      public_ssh_key: '{{ custom _credential_public_ssh_key }}'
+      public_ssh_key: '{{ custom_credential_public_ssh_key }}'
       state: present
