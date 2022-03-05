@@ -14,13 +14,13 @@ def run_module():
     module_args = dict(
         name=dict(type='str', required=True, aliases=['user']),
         password=dict(type='str', required=True, no_log=True),
+        private_ssh_key=dict(type='str', no_log=True),
+        public_ssh_key=dict(type='str', no_log=True),
         state=dict(type='str', default='present', choices=['absent', 'present'])
     )
 
     result = dict(
         changed=False,
-        original_message='',
-        message=''
     )
 
 
@@ -34,6 +34,8 @@ def run_module():
 
     result['username'] = module.params['name']
     result['password'] = 'NOT_LOGGIN_PASSWORD'
+    result['private_ssh_key'] = 'NOT_LOGGIN_PRIVATE_KEY'
+    result['public_ssh_key'] = 'NOT_LOGGIN_PUBLIC_KEY'
     result['state'] = module.params['state']
 
     module.exit_json(**result)
