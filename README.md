@@ -6,7 +6,7 @@ Demostrate how to use controller custom credentials
 Requirements
 ------------
 
-Custom ansible modules that were created to demonstrate how not use variables in modules.
+Two custom Ansible python modules to demonstrate how to use private credentials the incorrect way in modules.
 
 * `user_module_correct_way.py`
 * `user_module_wrong_way.py`
@@ -23,6 +23,35 @@ custom_credential_public_ssh_key
 
 Custom Credential
 -----------------
+```yaml
+- credential_type:
+    kind: cloud
+    name: custom_credential
+    type: credential_type
+  description: custom credential
+  inputs:
+    password: ''
+    private_ssh_key: ''
+    public_ssh_key: ''
+    username: Haley_The_Dog
+  name: custom_credential
+  natural_key:
+    credential_type:
+      kind: cloud
+      name: custom_credential
+      type: credential_type
+    name: custom_credential
+    organization: null
+    type: credential
+  organization: null
+  user:
+    type: user
+    username: admin
+```
+
+Custom Credential Type
+----------------------
+
 ```yaml
 - description: custom credential
   injectors:
@@ -64,13 +93,6 @@ Custom Credential
     kind: cloud
     name: custom_credential
     type: credential_type
-```
-
-Custom Credential Type
-----------------------
-
-```yaml
-
 ```
 
 Dependencies
